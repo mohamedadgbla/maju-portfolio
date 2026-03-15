@@ -28,7 +28,7 @@ function Footer() {
           
           {/* Copyright */}
           <p className="text-sm text-center md:text-left">
-            © {new Date().getFullYear()} Mohamed Gbla. All rights reserved.
+            © {new Date().getFullYear()} Maju Gbla. All rights reserved.
           </p>
 
           {/* Social Icons */}
@@ -76,7 +76,7 @@ function Footer() {
       {showScroll && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-6 right-6 bg-green-500 text-white p-3 rounded-full shadow-lg hover:bg-green-600 transition duration-300"
+          className="fixed bottom-6 right-6 bg-pink-500 text-white p-3 rounded-full shadow-lg hover:bg-pink-500 transition duration-300"
         >
           <ArrowUp size={20} />
         </button>

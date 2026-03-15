@@ -1,55 +1,86 @@
-import heroImg from "../assets/hero.png";
+import heroImg from "../assets/register.jpg";
+import { FaPhoneAlt, FaMapMarkerAlt, FaEnvelope, FaCalendarAlt } from "react-icons/fa";
 
 function About() {
   return (
-    <section id="about" className="bg-slate-900 dark:bg-slate-950 text-white">
-      <div className="max-w-6xl mx-auto px-6 py-24 flex flex-col md:flex-row items-center gap-12">
-        
-        {/* Left - Text */}
-        <div className="md:w-1/2 text-center md:text-left">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            <span className="text-green-500">Professional</span> Web Developer
+    <section
+      id="about"
+      className="bg-gray-50 dark:bg-slate-950 py-16 text-white"
+    >
+      <div className="max-w-6xl mx-auto px-6">
+
+        {/* Title */}
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-bold">
+            About <span className=" text-pink-500">Me</span>
           </h2>
-
-          <p className="text-slate-300 mb-6 leading-relaxed">
-            I am a passionate Software Developer with a background in Computer Science. 
-            I specialize in building modern, scalable web applications using React, Node.js, 
-            and clean architecture principles.
-          </p>
-
-          <p className="text-slate-400 mb-8 leading-relaxed">
-            I enjoy solving real-world problems, improving system security, 
-            and creating user-friendly digital experiences that deliver impact.
-          </p>
-
-          <button
-            onClick={() =>
-              document
-                .getElementById("projects")
-                .scrollIntoView({ behavior: "smooth" })
-            }
-            className="px-6 py-3 bg-green-500 text-white rounded-lg hover:bg-green-600 transition duration-300"
-          >
-            Learn More
-          </button>
         </div>
 
-        {/* Right - Image */}
-        <div className="md:w-1/2 flex justify-center md:justify-end relative">
-          <div className="relative w-64 h-64 md:w-80 md:h-80">
-            
-            <img
-              src={heroImg}
-              alt="About Mohamed Gbla"
-              className="w-full h-full object-cover rounded-md"
-            />
+        {/* Content */}
+        <div className="flex flex-col md:flex-row items-center gap-12">
 
-            {/* Decorative Ellipse */}
-            <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 w-48 h-8 border-4 border-green-500 rounded-full"></div>
+          {/* LEFT IMAGE */}
+          <div className="md:w-1/2 flex justify-center">
+            <div className="bg-white p-6 rounded-3xl shadow-xl">
+              <img
+                src={heroImg}
+                alt="About"
+                className="w-72 h-80 object-cover rounded-2xl"
+              />
+            </div>
+          </div>
+
+          {/* RIGHT CONTENT */}
+          <div className="md:w-1/2">
+
+            <h3 className="text-2xl font-bold mb-4  text-pink-500">
+              Who Am I?
+            </h3>
+
+            <p className="text-white/90 mb-4 leading-relaxed">
+              I am a creative designer and UI/UX specialist based in London,
+              UK, focusing on both digital platforms and print solutions.
+              I find great fulfillment in turning complex problems into
+              simple and elegant solutions.
+            </p>
+
+            <p className="text-white/80 mb-6 leading-relaxed">
+              My core goal is to deliver your message and brand identity in
+              the most engaging way possible. Through my career I have had
+              the opportunity to collaborate with well-known brands.
+            </p>
+
+            {/* Personal Info */}
+            <h4 className="text-xl font-semibold mb-4  text-pink-500">
+              Personal Info
+            </h4>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+
+              <div className="flex items-center gap-3 bg-white/10 p-3 rounded-lg">
+                <FaPhoneAlt className=" text-pink-500" />
+                <span>+123 456 7890</span>
+              </div>
+
+              <div className="flex items-center gap-3 bg-white/10 p-3 rounded-lg">
+                <FaEnvelope className=" text-pink-500" />
+                <span>yourmail@gmail.com</span>
+              </div>
+
+              <div className="flex items-center gap-3 bg-white/10 p-3 rounded-lg">
+                <FaMapMarkerAlt className=" text-pink-500" />
+                <span>London / England</span>
+              </div>
+
+              <div className="flex items-center gap-3 bg-white/10 p-3 rounded-lg">
+                <FaCalendarAlt className=" text-pink-500" />
+                <span>Jan 01, 2003</span>
+              </div>
+
+            </div>
 
           </div>
         </div>
-
       </div>
     </section>
   );

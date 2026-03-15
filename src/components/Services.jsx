@@ -105,126 +105,91 @@
 
 // export default Services;
 
-
 import {
-  Monitor,
-  Palette,
-  Code,
-  Smartphone,
+  Briefcase,
+  BookOpen,
+  Calendar,
+  Shield,
+  Wifi,
+  Cpu,
 } from "lucide-react";
-import { motion } from "framer-motion";
 
 function Services() {
   const services = [
     {
-      title: "Web Design",
+      title: "Business Strategy",
       description:
-        "Designing responsive and modern websites focused on performance, usability, and clean UI.",
-      icon: <Monitor size={28} />,
-      highlight: false,
+        "Research and discovery for a client’s idea to create the best solution.",
+      icon: <Briefcase size={28} />,
     },
     {
-      title: "UI / UX Design",
+      title: "App Development",
       description:
-        "Creating intuitive user interfaces and seamless user experiences with modern design principles.",
-      icon: <Palette size={28} />,
-      highlight: false,
+        "It uses a dictionary of over 200 Latin words combined with a handful of model sentence.",
+      icon: <BookOpen size={28} />,
     },
     {
-      title: "Web Developer",
+      title: "App Development",
       description:
-        "Building responsive and modern systems focused on performance, usability, and clean UI.",
-      icon: <Code size={28} />,
-      highlight: false,
+        "Ensure your next strategy and process development are done to the work.",
+      icon: <Calendar size={28} />,
     },
     {
-      title: "Mobile Developer",
+      title: "Mobile Apps",
       description:
-        "Building responsive mobile apps with React Native focused on performance, usability, and clean UI.",
-      icon: <Smartphone size={28} />,
-      highlight: false,
+        "Ensure your mobile app campaign is effective and efficient for the best results.",
+      icon: <Shield size={28} />,
+    },
+    {
+      title: "CEO Marketing",
+      description:
+        "Always free from repetition injected humour or non-characteristic words etc.",
+      icon: <Wifi size={28} />,
+    },
+    {
+      title: "Personal Portfolio April",
+      description:
+        "It uses a dictionary of over 200 Latin words combined with a handful of model sentence.",
+      icon: <Cpu size={28} />,
     },
   ];
 
   return (
-    <section
-      id="services"
-      className="bg-slate-900 dark:bg-slate-950 text-white py-24 overflow-hidden"
-    >
-      <div className="max-w-6xl mx-auto px-6 text-center">
+    <section id="services" className="bg-gray-100 py-20">
+      <div className="max-w-6xl mx-auto px-6">
 
-        {/* Section Title */}
-        <h2 className="text-3xl md:text-4xl font-bold mb-2">
-          MY<span className="text-green-500"> SERVICES</span>
-        </h2>
-        <p className="text-slate-400 mb-16">
-          What I can help you with
-        </p>
+        {/* Section Header */}
+        <p className="text-pink-500 text-4xl font-bold mb-3 text-center">Service</p>
+        <h4 className="text-2xl font-semibold mb-12 text-gray-800 text-center">
+          What I Do
+        </h4>
 
-        {/* Cards */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {/* Services Grid */}
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+
           {services.map((service, index) => (
-            <motion.div
+            <div
               key={index}
-              initial={{ x: -100, opacity: 0 }}
-              whileInView={{ x: 0, opacity: 1 }}
-              transition={{
-                duration: 0.6,
-                delay: index * 0.2,
-                ease: "easeOut",
-              }}
-              viewport={{ once: true }}
-              className={`p-8 rounded-xl transition duration-300 shadow-md hover:shadow-xl
-                ${
-                  service.highlight
-                    ? "bg-green-950"
-                    : "bg-slate-800"
-                }`}
+              className="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition duration-300"
             >
               {/* Icon */}
-              <div
-                className={`w-16 h-16 mx-auto mb-6 flex items-center justify-center rounded-full text-2xl
-                  ${
-                    service.highlight
-                      ? "bg-white text-slate-900"
-                      : "bg-green-500 text-white"
-                  }`}
-              >
+              <div className="text-pink-500 mb-4">
                 {service.icon}
               </div>
 
               {/* Title */}
-              <h3 className="text-xl font-semibold mb-4">
+              <h3 className="text-xl font-semibold mb-3 text-gray-800">
                 {service.title}
               </h3>
 
               {/* Description */}
-              <p
-                className={`mb-6 leading-relaxed
-                  ${
-                    service.highlight
-                      ? "text-green-300"
-                      : "text-slate-300"
-                  }`}
-              >
+              <p className="text-gray-500 leading-relaxed">
                 {service.description}
               </p>
-
-              {/* Button */}
-              <button
-                className={`px-6 py-2 rounded-lg transition duration-300
-                  ${
-                    service.highlight
-                      ? "bg-white text-slate-900 hover:bg-green-500 hover:text-white"
-                      : "bg-green-500 hover:bg-green-600"
-                  }`}
-              >
-                Learn More
-              </button>
-            </motion.div>
+            </div>
           ))}
-        </div>
 
+        </div>
       </div>
     </section>
   );

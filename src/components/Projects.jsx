@@ -1,114 +1,176 @@
-import { projects } from "../data/projects";
+import { motion } from "framer-motion";
+import { GraduationCap, Briefcase } from "lucide-react";
 
-function Projects() {
+function Resume() {
+
+  const education = [
+    {
+      title: "Diploma in Web Development",
+      place: "University of London",
+      year: "2018 - 2021",
+      desc: "Studied modern web technologies including React, Node.js and UI design.",
+    },
+    {
+      title: "Computer Science Degree",
+      place: "Tech Institute",
+      year: "2015 - 2018",
+      desc: "Focused on software engineering, databases and system architecture.",
+    },
+  ];
+
+  const experience = [
+    {
+      title: "Frontend Developer",
+      place: "Tech Company",
+      year: "2022 - Present",
+      desc: "Building scalable React applications with modern UI frameworks.",
+    },
+    {
+      title: "Junior Web Developer",
+      place: "Startup Agency",
+      year: "2021 - 2022",
+      desc: "Developed responsive websites and collaborated with designers.",
+    },
+  ];
+
+  const skills = [
+    { name: "React", level: 90 },
+    { name: "JavaScript", level: 85 },
+    { name: "Tailwind CSS", level: 80 },
+    { name: "Node.js", level: 75 },
+  ];
+
   return (
-    <section id="projects" className="max-w-6xl mx-auto px-6 py-24">
-      <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
-        Projects
-      </h2>
+    <section id="resume" className="bg-slate-950 text-white py-24">
+      <div className="max-w-6xl mx-auto px-6">
 
-      <p className="text-md font-semibold text-center mb-12">
-        <span className="text-green-500">
-          Just click live and you are in the project
-        </span>
-      </p>
+        {/* Header */}
+        <div className="text-center mb-20">
+          <p className="text-pink-500 font-semibold">7+ YEARS EXPERIENCE</p>
+          <h2 className="text-4xl font-bold">
+            My Resume
+          </h2>
+        </div>
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {projects.map((project, index) => (
-          <div
-            key={index}
-            className="bg-slate-100 dark:bg-slate-900 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300 flex flex-col"
-          >
-            <img
-              src={project.image}
-              alt={project.title}
-              className="w-full h-48 object-cover"
-            />
+        {/* Timeline Layout */}
+        <div className="grid md:grid-cols-2 gap-16 relative">
 
-            <div className="p-6 flex flex-col flex-grow">
-              <h3 className="text-xl font-semibold mb-4">
-                {project.title}
-              </h3>
+          {/* Timeline Line */}
+          <div className="hidden md:block absolute left-1/2 top-0 h-full w-1 bg-pink-500/30"></div>
 
-              <p className="text-slate-600 dark:text-slate-400 mb-6 flex-grow">
-                {project.description}
-              </p>
+          {/* EDUCATION */}
+          <div>
+            <h3 className="text-2xl font-bold mb-10 flex items-center gap-2">
+              <GraduationCap className="text-pink-500"/> Education
+            </h3>
 
-              <div className="flex flex-wrap gap-2 mb-6">
-                {project.tech.map((item, i) => (
-                  <span
-                    key={i}
-                    className="text-sm px-3 py-1 bg-indigo-100 dark:bg-green-500 dark:text-white rounded-full"
-                  >
-                    {item}
-                  </span>
-                ))}
-              </div>
-
-              {/* Live Button */}
-              {project.live && (
-                <a
-                  href={project.live}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-auto inline-block text-center bg-white hover:bg-green-700 text-black font-medium px-5 py-2 rounded-lg transition duration-300"
+            <div className="space-y-8">
+              {education.map((item, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ x: -100, opacity: 0 }}
+                  whileInView={{ x: 0, opacity: 1 }}
+                  transition={{ duration: 0.6 }}
+                  className="bg-slate-900 p-6 rounded-xl shadow hover:shadow-lg border border-slate-800"
                 >
-                  View Live
-                </a>
-              )}
+                  <div className="flex justify-between mb-2">
+                    <h4 className="font-semibold text-lg">
+                      {item.title}
+                    </h4>
+
+                    <span className="text-sm bg-pink-500/20 text-pink-400 px-3 py-1 rounded">
+                      {item.year}
+                    </span>
+                  </div>
+
+                  <p className="text-slate-400 text-sm mb-2">
+                    {item.place}
+                  </p>
+
+                  <p className="text-slate-300 text-sm">
+                    {item.desc}
+                  </p>
+                </motion.div>
+              ))}
             </div>
           </div>
-        ))}
+
+          {/* EXPERIENCE */}
+          <div>
+            <h3 className="text-2xl font-bold mb-10 flex items-center gap-2">
+              <Briefcase className="text-pink-500"/> Experience
+            </h3>
+
+            <div className="space-y-8">
+              {experience.map((item, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ x: 100, opacity: 0 }}
+                  whileInView={{ x: 0, opacity: 1 }}
+                  transition={{ duration: 0.6 }}
+                  className="bg-slate-900 p-6 rounded-xl shadow hover:shadow-lg border border-slate-800"
+                >
+                  <div className="flex justify-between mb-2">
+                    <h4 className="font-semibold text-lg">
+                      {item.title}
+                    </h4>
+
+                    <span className="text-sm bg-pink-500/20 text-pink-400 px-3 py-1 rounded">
+                      {item.year}
+                    </span>
+                  </div>
+
+                  <p className="text-slate-400 text-sm mb-2">
+                    {item.place}
+                  </p>
+
+                  <p className="text-slate-300 text-sm">
+                    {item.desc}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+
+        </div>
+
+        {/* SKILLS */}
+        <div className="mt-24">
+
+          <h3 className="text-2xl font-bold mb-10 text-center">
+            Professional Skills
+          </h3>
+
+          <div className="grid md:grid-cols-2 gap-8">
+
+            {skills.map((skill, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ delay: index * 0.2 }}
+              >
+                <div className="flex justify-between mb-1">
+                  <span className="font-medium">{skill.name}</span>
+                  <span className="text-pink-400">{skill.level}%</span>
+                </div>
+
+                <div className="w-full bg-slate-800 h-2 rounded">
+                  <div
+                    style={{ width: `${skill.level}%` }}
+                    className="bg-pink-500 h-2 rounded"
+                  ></div>
+                </div>
+
+              </motion.div>
+            ))}
+
+          </div>
+        </div>
+
       </div>
     </section>
   );
 }
 
-export default Projects;
-
-
-
-
-
-// import { projects } from "../data/projects";
-
-// function Projects() {
-//   return (
-//     <section id="projects" className="max-w-6xl mx-auto px-6 py-24">
-//       <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
-//         Projects 
-//       </h2>
-//       <p className="text-md md:text-md font-semibold text-center mb-12 ">
-//         <spin className="text-green-500">Just a just click live and you are in the project</spin> </p>
-
-//       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-//         {projects.map((project, index) => (
-//           <div key={index} className="bg-slate-100 dark:bg-slate-900 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300">
-
-//             <img src={project.image} alt={project.title} className="w-full h-48 object-cover" />
-
-//             <div className="p-6">
-//               <h3 className="text-xl font-semibold mb-4">
-//                 {project.title}
-//               </h3>
-//               <p className="text-slate-600 dark:text-slate-400 mb-6">
-//                 {project.description}
-//               </p>
-
-//               <div className="flex flex-wrap gap-2 mb-6">
-//                 {project.tech.map((item, i) => (
-//                   <span key={i} className="text-sm px-3 py-1 bg-indigo-100 dark:bg-green-500 dark:text-white rounded-full">
-//                     {item}
-//                   </span>
-//                 ))}
-//               </div>
-
-//             </div>
-//           </div>
-//         ))}
-//       </div>
-//     </section>
-//   );
-// }
-
-// export default Projects;
+export default Resume;

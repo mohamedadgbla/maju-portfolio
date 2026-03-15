@@ -78,61 +78,61 @@ function Contact() {
   return (
     <section
       id="contact"
-      className="bg-white dark:bg-slate-950 text-black dark:text-white py-24"
+      className="bg-gray-100 text-black dark:text-white py-24"
     >
       <div className="max-w-4xl mx-auto px-6">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-black">
           Contact Me
         </h2>
-        <p  className="text-md md:tex-sm font-regular text-center mb-8 text-green-500"> Let get in touch</p>
+        <p  className="text-md md:tex-sm font-regular text-center mb-8  text-pink-500"> Let get in touch</p>
 
         <form onSubmit={handleSubmit} className="space-y-6">
 
           {/* Name */}
           <div>
-            <label className="block mb-2 font-medium">Name</label>
+            <label className="block mb-2  text-pink-500 font-medium">Name</label>
             <input
               type="text"
               name="name"
               value={formData.name}
               onChange={handleChange}
               placeholder="Your name"
-              className="w-full p-3 rounded-lg bg-slate-100 dark:bg-slate-600 focus:outline-none focus:ring-2 focus:ring-green-500 transition"
+              className="w-full p-3 rounded-lg bg-slate-100 dark:bg-black focus:outline-none focus:ring-2 focus:ring-pink-500 transition"
             />
             {errors.name && (
-              <p className="text-red-500 text-sm mt-1">{errors.name}</p>
+              <p className=" text-pink-500 text-sm mt-1">{errors.name}</p>
             )}
           </div>
 
           {/* Email */}
           <div>
-            <label className="block mb-2 font-medium">Email</label>
+            <label className="block mb-2  text-pink-500 font-medium">Email</label>
             <input
               type="email"
               name="email"
               value={formData.email}
               onChange={handleChange}
               placeholder="your@email.com"
-              className="w-full p-3 rounded-lg bg-slate-100 dark:bg-slate-600 focus:outline-none focus:ring-2 focus:ring-green-500 transition"
+              className="w-full p-3 rounded-lg bg-slate-100 dark:bg-black focus:outline-none focus:ring-2 focus:ring-pink-500 transition"
             />
             {errors.email && (
-              <p className="text-red-500 text-sm mt-1">{errors.email}</p>
+              <p className=" text-pink-500 text-sm mt-1">{errors.email}</p>
             )}
           </div>
 
           {/* Message */}
           <div>
-            <label className="block mb-2 font-medium">Message</label>
+            <label className="block mb-2  text-pink-500 font-medium">Message</label>
             <textarea
               name="message"
               rows="5"
               value={formData.message}
               onChange={handleChange}
               placeholder="Write your message..."
-              className="w-full p-3 rounded-lg bg-slate-100 dark:bg-slate-600 focus:outline-none focus:ring-2 focus:ring-green-500 transition"
+              className="w-full p-3 rounded-lg bg-slate-100 dark:bg-black focus:outline-none focus:ring-2 focus:ring-pink-500 transition"
             ></textarea>
             {errors.message && (
-              <p className="text-red-500 text-sm mt-1">{errors.message}</p>
+              <p className=" text-pink-500 text-sm mt-1">{errors.message}</p>
             )}
           </div>
 
@@ -140,7 +140,7 @@ function Contact() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full py-3 bg-green-500 text-white rounded-lg hover:bg-green-600 transition duration-300 flex justify-center items-center gap-2 disabled:opacity-70"
+            className="w-full py-3  bg-pink-500 text-white rounded-lg hover:bg-pink-500 transition duration-300 flex justify-center items-center gap-2 disabled:opacity-70"
           >
             {loading ? (
               <>
@@ -155,46 +155,19 @@ function Contact() {
 
         {/* Success / Error UI */}
         {status === "success" && (
-          <div className="mt-6 p-4 bg-green-100 text-green-700 rounded-lg text-center">
+          <div className="mt-6 p-4 bg-green-100 text-pink-500 rounded-lg text-center">
             Message sent successfully!
           </div>
         )}
 
         {status === "error" && (
-          <div className="mt-6 p-4 bg-red-100 text-red-700 rounded-lg text-center">
+          <div className="mt-6 p-4 bg-red-100  text-pink-500 rounded-lg text-center">
             Something went wrong. Please try again.
           </div>
         )}
 
-        {/* Contact Info */}
-        <div className="mt-10 text-center text-slate-600 dark:text-slate-400">
-         
-          <p>
-            GitHub:{" "}
-            <a
-              href="https://github.com/mohamedadgbla/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-green-500 hover:underline"
-            >
-              github.com/mohamedadgbla
-            </a>
-          </p>
-            
-             <p  className="text-green-500 hover:underline">Email: mohamedadgbla2000@gmail.com</p>
-
-          <p>
-            LinkedIn:{" "}
-            <a
-              href="https://www.linkedin.com/in/mohamed-a-d-gbla-522437315/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-green-500 hover:underline"
-            >
-              linkedin.com/in/mohamed-a-d-gbla
-            </a>
-          </p>
-        </div>
+      
+      
       </div>
     </section>
   );
