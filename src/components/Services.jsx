@@ -155,7 +155,7 @@ function Services() {
   ];
 
   return (
-    <section id="services" className="bg-gray-100 py-20">
+    <section id="skills" className="bg-gray-100 py-20">
       <div className="max-w-6xl mx-auto px-6">
 
         {/* Section Header */}
