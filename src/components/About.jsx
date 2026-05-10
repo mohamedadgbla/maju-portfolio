@@ -1,89 +1,117 @@
-import heroImg from "../assets/register.jpg";
-import { FaPhoneAlt, FaMapMarkerAlt, FaEnvelope, FaCalendarAlt } from "react-icons/fa";
-//mmmmmmmmmm
-function About() {
-  return (
-    <section
-      id="about"
-      className="bg-gray-50 dark:bg-slate-950 py-16 text-white"
-    >
-      <div className="max-w-6xl mx-auto px-6">
+// import heroImg from "../assets/hero.png";
 
-        {/* Title */}
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold">
-            About <span className=" text-pink-500">Me</span>
-          </h2>
+// function About() {
+//   return (
+//     <section id="about" className="bg-white text-black">
+//       <div className="max-w-6xl mx-auto px-6 py-24 flex flex-col md:flex-row m-4 items-center gap-6">
+        
+//         {/* Left - Text */}
+//         <div className="md:w-1/2 text-center md:text-right md: m-4 ">
+//           <h2 className="text-4xl md:text-3xl font-bold mb-6">
+//             <span className="text-green-300">Professional</span> Web Developer
+//           </h2>
+
+//           <p className="text-black mb-6 leading-relaxed">
+//             I am a passionate Software Developer with a background in Computer Science. 
+//             I specialize in building modern, scalable web applications using React, Node.js, 
+//             and clean architecture principles.
+//           </p>
+
+//           <p className="text-slate-600 mb-8 leading-relaxed">
+//             I enjoy solving real-world problems, improving system security, 
+//             and creating user-friendly digital experiences that deliver impact.
+//           </p>
+
+//           <button
+//             onClick={() =>
+//               document
+//                 .getElementById("projects")
+//                 .scrollIntoView({ behavior: "smooth" })
+//             }
+//             className="px-6 py-3 bg-green-500 text-white rounded-lg hover:bg-green-600 transition duration-300"
+//           >
+//             Learn More
+//           </button>
+//         </div>
+
+//         {/* Right - Image */}
+//         <div className="md:w-1/2 flex justify-center md:justify-end relative">
+//           <div className="relative w-64 h-64 md:w-80 md:h-80">
+            
+//             <img
+//               src={heroImg}
+//               alt="About Mohamed Gbla"
+//               className="w-full h-full object-cover rounded-md"
+//             />
+
+//             {/* Decorative Ellipse */}
+//             <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 w-48 h-8 border-4 border-green-500 rounded-full"></div>
+
+//           </div>
+//         </div>
+
+//       </div>
+//     </section>
+//   );
+// }
+
+// export default About;
+
+
+import gra2Img from "../assets/gra2.jpg";
+
+export default function AboutExample() {
+  return (
+    <section className="bg-slate-900 dark:bg-slate-950 text-white min-h-screen flex items-center justify-center px-6">
+      <div className="max-w-6xl w-full flex flex-col md:flex-row items-center gap-6">
+        
+        {/* LEFT SIDE (IMAGE) */}
+        <div className="md:w-1/2">
+          <img
+            src={gra2Img}
+            alt="About Mohamed Gbla"
+            className="max-w-xs object-cover rounded"
+          />
         </div>
 
-        {/* Content */}
-        <div className="flex flex-col md:flex-row items-center gap-12">
+        {/* RIGHT SIDE (TEXT CONTENT) */}
+        <div className="md:w-1/2 text-center md:text-left md:m-4">
+          
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            <span className="text-green-500">Professional</span> Web Developer
+          </h2>
 
-          {/* LEFT IMAGE */}
-          <div className="md:w-1/2 flex justify-center">
-            <div className="bg-white p-6 rounded-3xl shadow-xl">
-              <img
-                src={heroImg}
-                alt="About"
-                className="w-72 h-80 object-cover rounded-2xl"
-              />
-            </div>
-          </div>
+          <p className=" text-slate-300 mb-6 leading-relaxed">
+            I am a passionate Software Developer with a background in Computer Science.
+            I specialize in building modern, scalable web applications using React,
+            Node.js, and clean architecture principles.
+          </p>
 
-          {/* RIGHT CONTENT */}
-          <div className="md:w-1/2">
+          <p className=" text-slate-300 mb-8 leading-relaxed">
+            I enjoy solving real-world problems, improving system security,
+            and creating user-friendly digital experiences that deliver impact.
+          </p>
 
-            <h3 className="text-2xl font-bold mb-4  text-pink-500">
-              Who Am I?
-            </h3>
 
-            <p className="text-white/90 mb-4 leading-relaxed">
-              I am a creative designer and UI/UX specialist based in London,
-              UK, focusing on both digital platforms and print solutions.
-              I find great fulfillment in turning complex problems into
-              simple and elegant solutions.
-            </p>
+           <a
+            href="/cv.pdf"
+            download
+            className="px-6 py-3 bg-green-500 text-white rounded-lg hover:bg-green-600 transition duration-300 inline-block"
+            >
+            Download My CV
+          </a>
 
-            <p className="text-white/80 mb-6 leading-relaxed">
-              My core goal is to deliver your message and brand identity in
-              the most engaging way possible. Through my career I have had
-              the opportunity to collaborate with well-known brands.
-            </p>
 
-            {/* Personal Info */}
-            <h4 className="text-xl font-semibold mb-4  text-pink-500">
-              Personal Info
-            </h4>
+          {/* ✅ Correct Button */}
+          {/* <a
+            href="#cv"
+            className="px-6 py-3 bg-green-500 text-white rounded-lg hover:bg-green-600 transition duration-300 inline-block"
+          >
+            My CV
+          </a> */}
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-
-              <div className="flex items-center gap-3 bg-white/10 p-3 rounded-lg">
-                <FaPhoneAlt className=" text-pink-500" />
-                <span>+123 456 7890</span>
-              </div>
-
-              <div className="flex items-center gap-3 bg-white/10 p-3 rounded-lg">
-                <FaEnvelope className=" text-pink-500" />
-                <span>yourmail@gmail.com</span>
-              </div>
-
-              <div className="flex items-center gap-3 bg-white/10 p-3 rounded-lg">
-                <FaMapMarkerAlt className=" text-pink-500" />
-                <span>London / England</span>
-              </div>
-
-              <div className="flex items-center gap-3 bg-white/10 p-3 rounded-lg">
-                <FaCalendarAlt className=" text-pink-500" />
-                <span>Jan 01, 2003</span>
-              </div>
-
-            </div>
-
-          </div>
         </div>
       </div>
     </section>
   );
 }
-
-export default About;

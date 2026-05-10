@@ -1,21 +1,31 @@
+
 import { useState, useEffect } from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
 import Services from "./components/Services";
 import Projects from "./components/Projects";
-import Footer from "./components/Footer";
-
 import Contact from "./components/Contact";
-import './index.css'
+import Footer from "./components/Footer";
+import "./index.css";
 
 function App() {
-  const [darkMode, setDarkMode] = useState(false);
+  // ✅ Load saved theme from localStorage
+  const [darkMode, setDarkMode] = useState(() => {
+    return localStorage.getItem("theme") === "dark";
+  });
 
+  // ✅ Apply dark class to <html> and save preference
   useEffect(() => {
-    darkMode
-      ? document.documentElement.classList.add("dark")
-      : document.documentElement.classList.remove("dark");
+    const root = window.document.documentElement;
+
+    if (darkMode) {
+      root.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+    } else {
+      root.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+    }
   }, [darkMode]);
 
   return (
@@ -26,12 +36,88 @@ function App() {
       <Services />
       <Projects />
       <Contact />
-      <Footer /> 
+      <Footer />
     </div>
   );
 }
 
 export default App;
+
+
+  //  WITHOUT DARK AND LIGHT MODE
+// import { useState, useEffect } from "react";
+// import Navbar from "./components/Navbar";
+// import Hero from "./components/Hero";
+// import About from "./components/About";
+// import Services from "./components/Services";
+// import Projects from "./components/Projects";
+// import Contact from "./components/Contact";
+// import Footer from "./components/Footer";
+// // import Cv from "./components/Cv";
+// import "./index.css";
+
+// function App() {
+//   const [darkMode, setDarkMode] = useState(false);
+
+//   useEffect(() => {
+//     darkMode
+//       ? document.documentElement.classList.add("dark")
+//       : document.documentElement.classList.remove("dark");
+//   }, [darkMode]);
+
+//   return (
+//     <div className="min-h-screen bg-white dark:bg-slate-950 text-black dark:text-white transition-colors duration-300">
+//       <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
+//       <Hero />
+//       <About />
+//       {/* <Cv />   ✅ RENDERED HERE */}
+//       <Services />
+//       <Projects />
+//       <Contact />
+//       <Footer />
+//     </div>
+//   );
+// }
+
+// export default App;
+
+
+
+
+// import { useState, useEffect } from "react";
+// import Navbar from "./components/Navbar";
+// import Hero from "./components/Hero";
+// import About from "./components/About";
+// import Services from "./components/Services";
+// import Projects from "./components/Projects";
+// import Footer from "./components/Footer";
+
+// import Contact from "./components/Contact";
+// import './index.css'
+
+// function App() {
+//   const [darkMode, setDarkMode] = useState(false);
+
+//   useEffect(() => {
+//     darkMode
+//       ? document.documentElement.classList.add("dark")
+//       : document.documentElement.classList.remove("dark");
+//   }, [darkMode]);
+
+//   return (
+//     <div className="min-h-screen bg-white dark:bg-slate-950 text-black dark:text-white transition-colors duration-300">
+//       <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
+//       <Hero />
+//       <About />
+//       <Services />
+//       <Projects />
+//       <Contact />
+//       <Footer /> 
+//     </div>
+//   );
+// }
+
+// export default App;
 
 
 
